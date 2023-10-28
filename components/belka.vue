@@ -1,8 +1,10 @@
 <template>
     <main>
         <div class="belka">
-        <NuxtLink to="/">Zewnątrz</NuxtLink>
-        <NuxtLink to="/wnetrze">Wewnątrz</NuxtLink>
+        <NuxtLink to="/">Kościół Rektoralny pw. Wniebowzięcia 
+        Najświętszej Marii Panny Zwycięskiej w Lublinie</NuxtLink><br>
+        <NuxtLink to="/">Zewnątrz </NuxtLink>
+        <NuxtLink to="/wnetrze">Wewnątrz </NuxtLink>
         <NuxtLink to="/firstperson">FirstPerson</NuxtLink>
         
         
@@ -10,6 +12,8 @@
     </main>
   </template>
   <style>
+  @import url("https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;800&display=swap");
+
   .belka {
     width: 90vw;
     height: auto;
@@ -21,5 +25,11 @@
     position: absolute;
     top: 0;
     left: 0;
+    font-family: "Inknut Antiqua", serif;
+    font-weight: 300;
+    line-height: 1.8rem
+  }
+  a {
+    color: #000;
   }
  </style>
