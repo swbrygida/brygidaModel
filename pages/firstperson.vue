@@ -1,6 +1,6 @@
 <template>
     <main>
-
+      <div id="loading-bar"></div>
     </main>
   </template>
   <script setup>
@@ -19,13 +19,31 @@
   renderer.setSize(window.innerWidth * 0.95, window.innerHeight * 0.9);
   document.body.appendChild(renderer.domElement);
   
-  const light = new THREE.AmbientLight(0xffffff, 4);
+  const light = new THREE.AmbientLight(0xffffff, 2);
   scene.add(light);
   const directionalLight = new THREE.DirectionalLight(0xffffff, 3);
   scene.add(directionalLight);
   directionalLight.position.set(5, 1, 5);
   
-  const gltfLoader = new GLTFLoader();
+  const loadingMenager = new THREE.LoadingManager(
+// loaded 
+() => {
+  window.setTimeout(() => {
+  const loadingElement = document.getElementById('loading-bar')
+  loadingElement.style.transformOrigin = 'top right'
+  loadingElement.style.transform = 'scaleX(0)'
+  }, 500)
+},
+// progress
+(itemUrl, itemsLoaded, itemsTotal) => {
+  const loadingElement = document.getElementById('loading-bar')
+  const progress = itemsLoaded / itemsTotal
+  loadingElement.style.transform = 'scaleX(' + progress + ')'
+}
+);
+
+
+  const gltfLoader = new GLTFLoader(loadingMenager);
   const url = "/models/obiektPLUS.glb"
   gltfLoader.load(url, (gltf) => {
     console.log(gltf.scene);

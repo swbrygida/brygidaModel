@@ -1,5 +1,6 @@
 <template>
     <main>
+      <div id="loading-bar-index"></div>
 
     </main>
   </template>
@@ -31,7 +32,26 @@
   scene.add(directionalLight);
   directionalLight.position.set(-1, -1, 2);
   
-  const gltfLoader = new GLTFLoader();
+
+  const loadingMenager = new THREE.LoadingManager(
+// loaded 
+() => {
+  window.setTimeout(() => {
+  const loadingElement = document.getElementById('loading-bar-index')
+  loadingElement.style.transformOrigin = 'top right'
+  loadingElement.style.transform = 'scaleX(0)'
+  }, 500)
+},
+// progress
+(itemUrl, itemsLoaded, itemsTotal) => {
+  const loadingElement = document.getElementById('loading-bar-index')
+  const progress = itemsLoaded / itemsTotal
+  loadingElement.style.transform = 'scaleX(' + progress + ')'
+}
+);
+
+
+  const gltfLoader = new GLTFLoader(loadingMenager);
   const url = "/models/obiektZ.glb";
   gltfLoader.load(url, (gltf) => {
     console.log(gltf.scene);
@@ -78,5 +98,17 @@
     console.log("wymontowyje");
   });
   </script>
-  <style></style>
+  <style>
+  #loading-bar-index {
+  position: absolute;
+  top: 50%; left: 0;
+  height: 3px;
+  width: 100%;;
+  background-color: #f4f4f4;
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: transform 0.3s;
+
+}
+  </style>
   

@@ -1,7 +1,6 @@
 <template>
     <main>
 		<div id="name"></div>
-    <div id="loading-bar"></div>
     </main>
   </template>
   <script setup>
@@ -56,33 +55,11 @@ renderer.outputColorSpace  = THREE.LinearSRGBColorSpace;
 
 
 
-
-
-
-const loadingMenager = new THREE.LoadingManager(
-// loaded 
-() => {
-  window.setTimeout(() => {
-  const loadingElement = document.getElementById('loading-bar')
-  loadingElement.style.transformOrigin = 'top right'
-  loadingElement.style.transform = 'scaleX(0)'
-  }, 1000)
-},
-// progress
-(itemUrl, itemsLoaded, itemsTotal) => {
-  const loadingElement = document.getElementById('loading-bar')
-  const progress = itemsLoaded / itemsTotal
-  loadingElement.style.transform = 'scaleX(' + progress + ')'
-}
-);
-
-
-
 var model,
 		collectibles = []; // all model children with names
 
     const url = "/models/obiektPLUS.glb"
-var loader = new GLTFLoader(loadingMenager);
+var loader = new GLTFLoader();
 		loader.load( url, gltf => {
 				model = gltf.scene;
 				collectibles = [];
@@ -215,17 +192,5 @@ onUnmounted(() => {
     top: 15vh; left: 0;
     font-size: 3em;
 }
-#loading-bar {
-  position: absolute;
-  top: 50%; left: 0;
-  height: 3px;
-  width: 100%;;
-  background-color: rgb(38, 38, 38);
-  transform: scaleX(0);
-  transform-origin: top left;
-  transition: transform 0.3s;
-
-}
-
   </style>
   
