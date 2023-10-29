@@ -3,9 +3,9 @@
         <div class="belka">
         <NuxtLink to="/">Kościół Rektoralny pw. Wniebowzięcia 
         Najświętszej Marii Panny Zwycięskiej w Lublinie</NuxtLink><br>
-        <NuxtLink to="/">Zewnątrz </NuxtLink>
-        <NuxtLink to="/wnetrze">Wewnątrz </NuxtLink>
-        <NuxtLink to="/firstperson">FirstPerson</NuxtLink>
+        <NuxtLink class="linkBelki" to="/">Zewnątrz </NuxtLink>
+        <NuxtLink class="linkBelki" to="/wnetrze">Wewnątrz </NuxtLink>
+        <NuxtLink class="linkBelki onlyBig" to="/firstperson" >Spacer</NuxtLink>
         
         
         </div>
@@ -26,10 +26,34 @@
     top: 0;
     left: 0;
     font-family: "Inknut Antiqua", serif;
-    font-weight: 300;
     line-height: 1.8rem
   }
   a {
     color: #000;
+    text-decoration: none;
   }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @media (orientation: portrait) {
+    .onlyBig {
+      display: none;
+    }
+    .linkBelki {
+      padding: 0 1em ;
+      text-decoration: underline;
+    }
+    .belka a {
+      font-size: small;
+      font-weight: 300;
+    }
+  }
+  @media (orientation: landscape) {
+    .linkBelki {
+      padding: 1em 3em;
+      margin: 1em;
+    }
+  }
+
  </style>

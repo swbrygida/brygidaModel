@@ -204,16 +204,15 @@ onUnmounted(() => {
   </script>
   <style>
   #name {
-    width: 100vw;
-    height: 20vh;
-    background-color: transparent;
-    color: #fff;
+    width: auto;
+    height: auto;
+    background-color: white;  
     display: block;
     z-index: 147;
     position: absolute;
     display: block;
     top: 15vh; left: 0;
-    font-size: 3em;
+    font-size: 2em;
 }
 #loading-bar {
   position: absolute;
