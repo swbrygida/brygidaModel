@@ -1,6 +1,7 @@
 <template>
     <main>
 		<div id="name"></div>
+    <div id="loading"><p>Loading.. Ładuje model 3d..</p></div>
     <div id="loading-bar"></div>
     </main>
   </template>
@@ -63,6 +64,8 @@ const loadingMenager = new THREE.LoadingManager(
 // loaded 
 () => {
   window.setTimeout(() => {
+  const loadingNapis = document.getElementById('loading')
+  loadingNapis.style.display = 'none'
   const loadingElement = document.getElementById('loading-bar')
   loadingElement.style.transformOrigin = 'top right'
   loadingElement.style.transform = 'scaleX(0)'
@@ -159,7 +162,8 @@ function selectElement( element )
         const poka = document.getElementById('name')
         // console.log(poka)
         const link = element.name
-        const href = 'https://brygida-arch.vercel.app/' + link
+        const href = 'https://brygida-arch.vercel.app/' 
+        // const href = 'https://brygida-arch.vercel.app/' + link
         const klikaj = '<a target="_blank" href=\"' + href + '\">' + link + '</a>'
         // console.log(klikaj)
         poka.innerHTML = klikaj
@@ -220,10 +224,18 @@ onUnmounted(() => {
   height: 3px;
   width: 100%;;
   background-color: rgb(38, 38, 38);
-  transform: scaleX(0);
+  transform: scaleX(0.3);
   transform-origin: top left;
   transition: transform 0.3s;
-
+}
+#loading {
+  position: absolute;
+  top: 45%; left: 0;
+  height: 30px;
+  width: 100%;;
+  color:#000;
+  background-color: transparent;
+  margin: 0 2em;
 }
 
   </style>

@@ -1,5 +1,6 @@
 <template>
     <main>
+      <div id="loading"><p>Loading.. Ładuje model 3d..</p></div>
       <div id="loading-bar"></div>
     </main>
   </template>
@@ -29,6 +30,8 @@
 // loaded 
 () => {
   window.setTimeout(() => {
+  const loadingNapis = document.getElementById('loading')
+  loadingNapis.style.display = 'none'
   const loadingElement = document.getElementById('loading-bar')
   loadingElement.style.transformOrigin = 'top right'
   loadingElement.style.transform = 'scaleX(0)'
