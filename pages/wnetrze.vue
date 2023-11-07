@@ -162,8 +162,8 @@ function selectElement( element )
         const poka = document.getElementById('name')
         // console.log(poka)
         const link = element.name
-        const href = 'https://brygida-arch.vercel.app/' 
-        // const href = 'https://brygida-arch.vercel.app/' + link
+        //const href = 'https://brygida-arch.vercel.app/' 
+        const href = 'https://brygida-arch.vercel.app/' + link
         const klikaj = '<a target="_blank" href=\"' + href + '\">' + link + '</a>'
         // console.log(klikaj)
         poka.innerHTML = klikaj
