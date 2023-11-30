@@ -2,7 +2,7 @@
     <main>
     <Belka />
   
-    <img src="../icons/info.jpg" class="infoo" alt="Informacja o dopinansowaniu projektu ze środków Ministerstwa Kultury i 
+    <img src="../public/icons/info.jpg" class="infoo" alt="Informacja o dopinansowaniu projektu ze środków Ministerstwa Kultury i 
     Dziedzictwa Narodowego">
     <div class="dofinansowano">
     <p>
