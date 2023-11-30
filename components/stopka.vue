@@ -3,7 +3,7 @@
       <div class="stopka">
         <p>
           <NuxtLink  target="_blank"  to="/info"
-            >Dofinansowano ze środków MKiDN</NuxtLink
+            >Dofinansowano ze środków Ministerstwa Kultury i Dziedzictwa Narodowego pochodzących z Funduszu Promocji Kultury - państwowego funduszu celowego</NuxtLink
           >
         </p>
       </div>
@@ -15,11 +15,11 @@
   .stopka {
     width: 90vw;
     height: auto;
-    padding: 1em 5vw;
+    padding: 0 5vw;
     border-top: 2px solid #f2f2f2;
     background-color:transparent;
     text-align: center;
-    font-size: large;
+    font-size: normal;
     font-weight: 800;
     position: fixed;
     bottom: 0; left: 0;
