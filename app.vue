@@ -3,6 +3,7 @@
     <ClientOnly>
       <Belka />
       <NuxtPage />
+      <Stopka />
     </ClientOnly>
   </div>
 </template>
