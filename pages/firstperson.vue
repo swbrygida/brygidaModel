@@ -68,7 +68,7 @@
   
 
   let raycaster;
-  raycaster = new THREE.Raycaster( new THREE.Vector3(), new THREE.Vector3( 0, - 1, 0 ), 0, 10 );
+  raycaster = new THREE.Raycaster( new THREE.Vector3(), new THREE.Vector3( 0, -1, 0 ), 0, 10 );
 
 let moveForward = false;
 let moveBackward = false;
@@ -164,17 +164,19 @@ if ( controls.isLocked === true ) {
 
   const delta = ( time - prevTime ) / 1000;
 
-  velocity.x -= velocity.x * 6.0 * delta;
-  velocity.z -= velocity.z * 6.0 * delta;
+  velocity.x -= velocity.x * 16.0 * delta;
+  velocity.z -= velocity.z * 16.0 * delta;
 
   velocity.y -= 9.8 * 100.0 * delta; // 100.0 = mass
 
+  
   direction.z = Number( moveForward ) - Number( moveBackward );
   direction.x = Number( moveRight ) - Number( moveLeft );
-  direction.normalize(); // this ensures consistent movements in all directions
 
-  if ( moveForward || moveBackward ) velocity.z -= direction.z * 6.0 * delta;
-  if ( moveLeft || moveRight ) velocity.x -= direction.x * 6.0 * delta;
+  direction.normalize(); 
+
+  if ( moveForward || moveBackward ) velocity.z -= direction.z * 20.0 * delta;
+  if ( moveLeft || moveRight ) velocity.x -= direction.x * 20.0 * delta;
 
   if ( onObject === true ) {
 
