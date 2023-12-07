@@ -4,7 +4,7 @@
       <NuxtLink  target="_blank"  to="/info">
       <img src="../public/icons/mkidn-logo.png"  class="logotypMKiDN" alt="Logotyp Ministerstwa Kultury i
     Dziedzictwa Narodowego"></NuxtLink>
-      <p>
+      <p class="dof">
         <NuxtLink  target="_blank"  to="/info"
           >Dofinansowano ze środków Funduszu Promocji Kultury</NuxtLink
         >

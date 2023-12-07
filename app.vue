@@ -1,6 +1,7 @@
 <template>
   <div>
     <ClientOnly>
+    <Dostepny />
       <Belka />
       <NuxtPage />
       <Stopka />

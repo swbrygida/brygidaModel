@@ -4,7 +4,7 @@
 
 
   <div class="dofinansowano">
-    <h3>
+    <h2>
       KULTURA CYFROWA 2023<br><br>
 
 Stworzenie nowoczesnej aplikacji internetowej oraz udostępnienie przewodnika wirtualnego 3d online <br>
@@ -17,7 +17,7 @@ całkowita wartość zadania 93.750,00 zł<br>
 
 data podpisania umowy 25 maja 2023 r. 
 <br><br>
-    </h3>
+    </h2>
   <p>
    Projekt zakłada zbudowanie aplikacji internetowej, która w sposób przyjazny użytkownikom, przy użyciu współczesnych technologii internetowych, będzie udostępniała, prezentowała i pomagała wyszukać, wszystkie dotychczas zdigitalizowane obiekty związane z kościołem pobrygidkowskim.
 
@@ -58,7 +58,7 @@ Zapraszamy!</p>
  </template>
  <style>
  .dofinansowano p,
- .dofinansowano h3
+ .dofinansowano h2
   {
    width: 80%;
    margin: 0 10%;
